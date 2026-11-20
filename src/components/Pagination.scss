@@ -1,0 +1,32 @@
+@use '../styles/variables' as *;
+
+.pagination {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+
+  &__button {
+    padding: 8px 14px;
+    background: $color-surface;
+    border: 1px solid $color-line;
+    border-radius: $radius;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      border-color: $color-accent;
+      color: $color-accent;
+    }
+
+    &:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+  }
+
+  &__position {
+    min-width: 120px;
+    text-align: center;
+    color: $color-muted;
+  }
+}

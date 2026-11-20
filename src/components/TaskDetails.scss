@@ -1,0 +1,62 @@
+@use '../styles/variables' as *;
+
+.task-details {
+  padding: 16px;
+  background: $color-surface;
+  border: 1px solid $color-line;
+  border-radius: $radius;
+
+  &__header {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  &__close,
+  &__retry {
+    padding: 4px 10px;
+    background: transparent;
+    border: 1px solid $color-line;
+    border-radius: $radius;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $color-accent;
+      color: $color-accent;
+    }
+  }
+
+  &__state {
+    margin: 0;
+    color: $color-muted;
+  }
+
+  &__message {
+    margin: 0 0 8px;
+    color: $color-danger;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 12px;
+    margin: 0;
+  }
+
+  &__label {
+    color: $color-muted;
+    font-size: 0.875rem;
+  }
+
+  &__value {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+}

@@ -1,0 +1,77 @@
+@use '../styles/variables' as *;
+
+.toast {
+  position: relative;
+  overflow: hidden;
+  min-width: 260px;
+  max-width: 360px;
+  background: $color-ink;
+  color: #fff;
+  border-radius: $radius;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  pointer-events: auto; // сам Toast клікабельний, контейнер — ні
+
+  &--success {
+    border-left: 4px solid $color-done;
+  }
+
+  &--error {
+    border-left: 4px solid $color-danger;
+  }
+
+  &--info {
+    border-left: 4px solid $color-accent;
+  }
+
+  &__content {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+  }
+
+  &__message {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  &__action {
+    flex-shrink: 0;
+    padding: 4px 10px;
+    background: transparent;
+    color: #fff;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: $radius;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  &__progress {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &__progress-bar {
+    height: 100%;
+    background: #fff;
+    transform-origin: left center;
+    animation-name: toast-progress;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes toast-progress {
+  from {
+    transform: scaleX(1);
+  }
+
+  to {
+    transform: scaleX(0);
+  }
+}

@@ -1,0 +1,88 @@
+@use '../styles/variables' as *;
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: $color-surface;
+  border: 1px solid $color-line;
+  border-radius: $radius;
+
+  &__title {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 8px 10px;
+    background: $color-surface;
+    border: 1px solid $color-line;
+    border-radius: $radius;
+
+    &--textarea {
+      resize: vertical;
+    }
+
+    &--invalid {
+      border-color: $color-danger;
+    }
+  }
+
+  &__error {
+    margin: 0;
+    font-size: 0.875rem;
+    color: $color-danger;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__cancel {
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px solid $color-line;
+    border-radius: $radius;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $color-ink;
+    }
+  }
+
+  &__submit {
+    flex: 1;
+    padding: 10px 14px;
+    background: $color-accent;
+    color: #fff;
+    font-weight: 600;
+    border: 0;
+    border-radius: $radius;
+    cursor: pointer;
+
+    &:hover {
+      background: $color-accent-dark;
+    }
+  }
+}

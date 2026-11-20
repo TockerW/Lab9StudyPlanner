@@ -1,0 +1,28 @@
+@use '../styles/variables' as *;
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &--empty {
+    padding: 32px 16px;
+    text-align: center;
+    background: $color-surface;
+    border: 1px dashed $color-line;
+    border-radius: $radius;
+  }
+
+  &__message {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  &__hint {
+    margin: 4px 0 0;
+    color: $color-muted;
+  }
+}

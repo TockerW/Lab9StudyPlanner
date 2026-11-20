@@ -1,0 +1,67 @@
+@use '../styles/variables' as *;
+
+.task-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+
+  &__group {
+    display: inline-flex;
+    border: 1px solid $color-line;
+    border-radius: $radius;
+    overflow: hidden;
+    background: $color-surface;
+  }
+
+  &__button {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 14px;
+    background: transparent;
+    border: 0;
+    border-right: 1px solid $color-line;
+    cursor: pointer;
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    &--active {
+      background: $color-ink;
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+
+  &__count {
+    font-size: 0.8rem;
+    opacity: 0.75;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__action {
+    padding: 8px 12px;
+    background: transparent;
+    border: 1px solid $color-line;
+    border-radius: $radius;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      border-color: $color-danger;
+      color: $color-danger;
+    }
+
+    &:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+  }
+}

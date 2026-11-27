@@ -1,0 +1,64 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.login-page {
+  display: flex;
+  justify-content: center;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: min(400px, 100%);
+    padding: 24px;
+    background: $color-surface;
+    border: 1px solid $color-line;
+    border-radius: $radius;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  &__control {
+    @include field-control;
+
+    &[aria-invalid='true'] {
+      border-color: $color-danger;
+    }
+  }
+
+  &__error {
+    margin: 0;
+    font-size: 0.875rem;
+    color: $color-danger;
+
+    &--form {
+      padding: 8px 10px;
+      border: 1px solid $color-danger;
+      border-radius: $radius;
+    }
+  }
+
+  &__submit {
+    @include button-primary;
+  }
+
+  &__hint {
+    margin: 0;
+    font-size: 0.8rem;
+    color: $color-muted;
+  }
+}

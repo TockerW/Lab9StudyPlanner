@@ -1,0 +1,84 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.task-form-dialog {
+  width: min(480px, calc(100vw - 32px));
+  padding: 0;
+  color: $color-ink;
+  background: $color-surface;
+  border: 1px solid $color-line;
+  border-radius: $radius;
+
+  &::backdrop {
+    background: rgba(28, 37, 48, 0.55);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  &__control {
+    @include field-control;
+
+    &--textarea {
+      resize: vertical;
+    }
+
+    &[aria-invalid='true'] {
+      border-color: $color-danger;
+    }
+  }
+
+  &__error {
+    margin: 0;
+    font-size: 0.875rem;
+    color: $color-danger;
+
+    &--form {
+      padding: 8px 10px;
+      border: 1px solid $color-danger;
+      border-radius: $radius;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__submit {
+    @include button-primary;
+    flex: 1;
+  }
+
+  &__cancel {
+    @include button-outline;
+    padding: 10px 14px;
+  }
+}

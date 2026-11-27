@@ -1,0 +1,29 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.tasks-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__header {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+
+  &__add {
+    @include button-primary;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+}

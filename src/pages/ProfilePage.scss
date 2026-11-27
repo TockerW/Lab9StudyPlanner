@@ -1,0 +1,42 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.profile-page {
+  align-self: flex-start;
+  width: min(480px, 100%);
+  padding: 24px;
+  background: $color-surface;
+  border: 1px solid $color-line;
+  border-radius: $radius;
+
+  &__title {
+    margin: 0 0 16px;
+    font-size: 1.4rem;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 16px;
+    margin: 0 0 20px;
+  }
+
+  &__label {
+    color: $color-muted;
+  }
+
+  &__value {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  &__logout {
+    @include button-outline;
+    padding: 8px 14px;
+
+    &:hover:not(:disabled) {
+      border-color: $color-danger;
+      color: $color-danger;
+    }
+  }
+}

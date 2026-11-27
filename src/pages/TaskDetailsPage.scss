@@ -1,0 +1,78 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.task-details-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__back {
+    align-self: flex-start;
+    color: $color-accent;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__card {
+    padding: 20px;
+    background: $color-surface;
+    border: 1px solid $color-line;
+    border-radius: $radius;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-size: 1.4rem;
+    overflow-wrap: anywhere;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 16px;
+    margin: 0 0 20px;
+  }
+
+  &__label {
+    color: $color-muted;
+  }
+
+  &__value {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &__confirm {
+    font-weight: 600;
+    color: $color-danger;
+  }
+
+  &__button {
+    @include button-outline;
+    padding: 8px 14px;
+
+    &--danger:hover:not(:disabled) {
+      border-color: $color-danger;
+      color: $color-danger;
+    }
+  }
+
+  &__message {
+    margin: 0 0 8px;
+    color: $color-danger;
+  }
+
+  &__retry {
+    @include button-primary;
+  }
+}

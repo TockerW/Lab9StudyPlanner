@@ -1,0 +1,30 @@
+@use '../styles/variables' as *;
+
+.task-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0;
+
+  &__item {
+    padding: 12px 16px;
+    background: $color-surface;
+    border: 1px solid $color-line;
+    border-radius: $radius;
+
+    &--done .task-stats__value {
+      color: $color-done;
+    }
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    color: $color-muted;
+  }
+
+  &__value {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+}

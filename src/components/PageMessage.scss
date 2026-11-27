@@ -1,0 +1,13 @@
+@use '../styles/variables' as *;
+
+.page-message {
+  padding: 32px 16px;
+  text-align: center;
+  background: $color-surface;
+  border: 1px dashed $color-line;
+  border-radius: $radius;
+
+  &--error {
+    border-color: $color-danger;
+  }
+}

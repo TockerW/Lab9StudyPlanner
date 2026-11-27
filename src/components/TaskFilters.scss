@@ -1,0 +1,61 @@
+@use '../styles/variables' as *;
+
+.task-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+
+  &__group {
+    display: inline-flex;
+    border: 1px solid $color-line;
+    border-radius: $radius;
+    overflow: hidden;
+    background: $color-surface;
+  }
+
+  &__button {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 14px;
+    background: transparent;
+    border: 0;
+    border-right: 1px solid $color-line;
+    cursor: pointer;
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    &--active {
+      background: $color-ink;
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+
+  &__count {
+    font-size: 0.8rem;
+    opacity: 0.75;
+  }
+
+  &__priority {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &__priority-label {
+    font-size: 0.875rem;
+    color: $color-muted;
+  }
+
+  &__select {
+    padding: 8px 10px;
+    background: $color-surface;
+    border: 1px solid $color-line;
+    border-radius: $radius;
+  }
+}
